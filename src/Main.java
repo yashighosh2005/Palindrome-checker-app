@@ -9,11 +9,9 @@ public class Main {
     public static void main(String[] args) {
 
         // UC1
-        System.out.println("==============================================");
         System.out.println("   Welcome to the Palindrome Checker App");
         System.out.println("   Version : 1.0");
         System.out.println("   System initialized successfully.");
-        System.out.println("==============================================\n");
 
         uc2_HardcodedPalindrome();
         uc3_StringReverse();
@@ -139,9 +137,7 @@ public class Main {
         System.out.println("Is Palindrome? : " + isPalindrome + "\n");
     }
 
-    // ================= UC8 =================
-
-    // Node class for Linked List
+    // UC8 Node class for Linked List
     static class Node {
         char data;
         Node next;

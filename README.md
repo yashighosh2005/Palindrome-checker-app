@@ -166,3 +166,30 @@ Use Deque to compare front and rear elements.
 ● Front and Rear Access – Enables direct comparison of first and last characters.
    
 ● Optimized Data Handling – Eliminates the need for separate reversal data structures.
+
+# UC8: Linked List Based Palindrome Checker
+### Goal: 
+Check palindrome using singly linked list.
+### Flow:
+- Convert string to linked list
+
+- Reverse second half
+
+- Compare halves
+### Key Concepts used in UC8:
+- Singly Linked List – A dynamic data structure where elements are connected using node references.
+- Node Traversal – Sequential access to elements using next references.
+- Fast and Slow Pointer Technique – Used to find the middle of the linked list efficiently.
+- In-Place Reversal – Reverses the second half of the list without extra memory.
+
+# UC9: Recursive Palindrome Checker
+### Goal: 
+Check palindrome using recursion.
+### Flow:
+- Recursive call compares start & end
+- Base condition exits recursion
+
+### Key Concepts used in UC9:
+- Recursion – A technique where a method calls itself to solve smaller subproblems.
+- Base Condition – Prevents infinite recursion and terminates the recursive calls.
+- Call Stack – Memory structure used to manage method calls during recursion.
