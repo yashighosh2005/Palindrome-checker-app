@@ -49,7 +49,7 @@ public class Main {
 
         boolean isPalindrome = input.equals(reversed);
 
-        System.out.println("UC3: Palindrome Check Using String Reverse");
+        System.out.println("UC3: Palindrome Check using String Reverse");
         System.out.println("Input : " + input);
         System.out.println("Reversed : " + reversed);
         System.out.println("Is Palindrome? : " + isPalindrome);
@@ -58,7 +58,7 @@ public class Main {
 
     public static void uc4_CharArrayMethod() {
 
-        String input = "radar";
+        String input = "racecar";
         char[] chars = input.toCharArray();
 
         int start = 0;
