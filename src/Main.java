@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,16 +19,18 @@ public class Main {
 
         // UC4
         uc4_CharArrayMethod();
+
+        // UC5
+        uc5_StackMethod();
     }
 
-    // UC2: Half Comparison Method
+    // UC2
     public static void uc2_HardcodedPalindrome() {
 
         String input = "madam";
         boolean isPalindrome = true;
 
         for (int i = 0; i < input.length() / 2; i++) {
-
             if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
                 isPalindrome = false;
                 break;
@@ -39,7 +43,7 @@ public class Main {
         System.out.println();
     }
 
-    // UC3: Reverse String Method
+    // UC3
     public static void uc3_StringReverse() {
 
         String input = "level";
@@ -58,20 +62,16 @@ public class Main {
         System.out.println();
     }
 
-    // UC4: Character Array + Two Pointer Method
+    // UC4
     public static void uc4_CharArrayMethod() {
 
         String input = "radar";
-
-        // Convert string to char array
         char[] chars = input.toCharArray();
 
         int start = 0;
         int end = chars.length - 1;
-
         boolean isPalindrome = true;
 
-        // Two-pointer comparison
         while (start < end) {
 
             if (chars[start] != chars[end]) {
@@ -84,6 +84,34 @@ public class Main {
         }
 
         System.out.println("UC4: Character Array Based Palindrome Check");
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println();
+    }
+
+    // UC5
+    public static void uc5_StackMethod() {
+
+        String input = "noon";
+
+        Stack<Character> stack = new Stack<>();
+
+        // Push characters into stack
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+
+        boolean isPalindrome = true;
+
+        // Pop and compare
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("UC5: Stack-Based Palindrome Checker");
         System.out.println("Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome);
         System.out.println();
