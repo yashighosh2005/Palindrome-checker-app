@@ -14,9 +14,12 @@ public class Main {
 
         // UC3
         uc3_StringReverse();
+
+        // UC4
+        uc4_CharArrayMethod();
     }
 
-    // UC2: Hardcoded Palindrome (Half Comparison Method)
+    // UC2: Half Comparison Method
     public static void uc2_HardcodedPalindrome() {
 
         String input = "madam";
@@ -42,18 +45,46 @@ public class Main {
         String input = "level";
         String reversed = "";
 
-        // Reverse using loop
         for (int i = input.length() - 1; i >= 0; i--) {
-
             reversed = reversed + input.charAt(i);
         }
 
-        // Compare original and reversed
         boolean isPalindrome = input.equals(reversed);
 
         System.out.println("UC3: Palindrome Check Using String Reverse");
         System.out.println("Input : " + input);
         System.out.println("Reversed : " + reversed);
+        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println();
+    }
+
+    // UC4: Character Array + Two Pointer Method
+    public static void uc4_CharArrayMethod() {
+
+        String input = "radar";
+
+        // Convert string to char array
+        char[] chars = input.toCharArray();
+
+        int start = 0;
+        int end = chars.length - 1;
+
+        boolean isPalindrome = true;
+
+        // Two-pointer comparison
+        while (start < end) {
+
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
+            }
+
+            start++;
+            end--;
+        }
+
+        System.out.println("UC4: Character Array Based Palindrome Check");
+        System.out.println("Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome);
         System.out.println();
     }
