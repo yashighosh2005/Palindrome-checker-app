@@ -9,17 +9,19 @@ public class Main {
         System.out.println("   System initialized successfully.");
         System.out.println("==============================================\n");
 
-        // UC2: Hardcoded Palindrome Check
+        // UC2
         uc2_HardcodedPalindrome();
+
+        // UC3
+        uc3_StringReverse();
     }
 
-    // UC2 Method
+    // UC2: Hardcoded Palindrome (Half Comparison Method)
     public static void uc2_HardcodedPalindrome() {
 
         String input = "madam";
         boolean isPalindrome = true;
 
-        // Check palindrome using loop
         for (int i = 0; i < input.length() / 2; i++) {
 
             if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
@@ -30,6 +32,28 @@ public class Main {
 
         System.out.println("UC2: Hardcoded Palindrome Check");
         System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println();
+    }
+
+    // UC3: Reverse String Method
+    public static void uc3_StringReverse() {
+
+        String input = "level";
+        String reversed = "";
+
+        // Reverse using loop
+        for (int i = input.length() - 1; i >= 0; i--) {
+
+            reversed = reversed + input.charAt(i);
+        }
+
+        // Compare original and reversed
+        boolean isPalindrome = input.equals(reversed);
+
+        System.out.println("UC3: Palindrome Check Using String Reverse");
+        System.out.println("Input : " + input);
+        System.out.println("Reversed : " + reversed);
         System.out.println("Is Palindrome? : " + isPalindrome);
         System.out.println();
     }
