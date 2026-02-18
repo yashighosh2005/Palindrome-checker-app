@@ -1,6 +1,8 @@
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Deque;
+import java.util.ArrayDeque;
 
 public class Main {
 
@@ -13,20 +15,12 @@ public class Main {
         System.out.println("   System initialized successfully.");
         System.out.println("==============================================\n");
 
-        // UC2
         uc2_HardcodedPalindrome();
-
-        // UC3
         uc3_StringReverse();
-
-        // UC4
         uc4_CharArrayMethod();
-
-        // UC5
         uc5_StackMethod();
-
-        // UC6
         uc6_QueueStackMethod();
+        uc7_DequeMethod();
     }
 
     // UC2
@@ -127,15 +121,13 @@ public class Main {
         Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
 
-        // Enqueue and Push
         for (char c : input.toCharArray()) {
-            queue.add(c);   // FIFO
-            stack.push(c);  // LIFO
+            queue.add(c);
+            stack.push(c);
         }
 
         boolean isPalindrome = true;
 
-        // Compare dequeue vs pop
         while (!queue.isEmpty()) {
 
             if (!queue.remove().equals(stack.pop())) {
@@ -145,6 +137,35 @@ public class Main {
         }
 
         System.out.println("UC6: Queue + Stack Based Palindrome Check");
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println();
+    }
+
+    // UC7
+    public static void uc7_DequeMethod() {
+
+        String input = "refer";
+
+        Deque<Character> deque = new ArrayDeque<>();
+
+        // Insert characters into deque
+        for (char c : input.toCharArray()) {
+            deque.add(c);
+        }
+
+        boolean isPalindrome = true;
+
+        // Compare front and rear
+        while (deque.size() > 1) {
+
+            if (!deque.removeFirst().equals(deque.removeLast())) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("UC7: Deque-Based Optimized Palindrome Checker");
         System.out.println("Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome);
         System.out.println();
