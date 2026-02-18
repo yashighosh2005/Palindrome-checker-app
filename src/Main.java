@@ -8,12 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // UC1: Welcome Message
-        System.out.println("==============================================");
-        System.out.println("   Welcome to the Palindrome Checker App");
-        System.out.println("   Version : 1.0");
-        System.out.println("   System initialized successfully.");
-        System.out.println("==============================================\n");
+        System.out.println("Welcome to the Palindrome Checker App");
+        System.out.println("Version : 1.0");
+        System.out.println("System initialized successfully.");
 
         uc2_HardcodedPalindrome();
         uc3_StringReverse();
@@ -23,7 +20,6 @@ public class Main {
         uc7_DequeMethod();
     }
 
-    // UC2
     public static void uc2_HardcodedPalindrome() {
 
         String input = "madam";
@@ -42,7 +38,6 @@ public class Main {
         System.out.println();
     }
 
-    // UC3
     public static void uc3_StringReverse() {
 
         String input = "level";
@@ -61,7 +56,6 @@ public class Main {
         System.out.println();
     }
 
-    // UC4
     public static void uc4_CharArrayMethod() {
 
         String input = "radar";
@@ -88,7 +82,6 @@ public class Main {
         System.out.println();
     }
 
-    // UC5
     public static void uc5_StackMethod() {
 
         String input = "noon";
@@ -113,7 +106,6 @@ public class Main {
         System.out.println();
     }
 
-    // UC6
     public static void uc6_QueueStackMethod() {
 
         String input = "civic";
@@ -142,7 +134,6 @@ public class Main {
         System.out.println();
     }
 
-    // UC7
     public static void uc7_DequeMethod() {
 
         String input = "refer";
