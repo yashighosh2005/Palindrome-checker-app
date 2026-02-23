@@ -193,3 +193,13 @@ Check palindrome using recursion.
 - Recursion – A technique where a method calls itself to solve smaller subproblems.
 - Base Condition – Prevents infinite recursion and terminates the recursive calls.
 - Call Stack – Memory structure used to manage method calls during recursion.
+
+# UC10: Case-Insensitive & Space-Ignored Palindrome
+### Goal: 
+Ignore spaces and case while checking a palindrome.
+### Flow:
+- Normalize string
+- Apply previous logic
+### Key Concepts used in UC10:
+- String preprocessing
+- Regular expressions
