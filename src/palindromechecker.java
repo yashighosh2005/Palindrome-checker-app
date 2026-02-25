@@ -20,6 +20,7 @@ public class palindromechecker {
         uc7_DequeMethod();
         uc8_LinkedListMethod();
         uc9_RecursiveMethod();
+        uc10_CaseInsensitiveSpaceIgnored();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -209,5 +210,32 @@ public class palindromechecker {
 
         // Recursive call
         return isPalindromeRecursive(str, start + 1, end - 1);
+    }
+    public static void uc10_CaseInsensitiveSpaceIgnored() {
+
+        String input = "Madam In Eden Im Adam";
+
+        // Step 1: Normalize string
+        String normalized = input.replaceAll("\\s+", "").toLowerCase();
+        // Step 2: Apply palindrome logic (two-pointer)
+        int start = 0;
+        int end = normalized.length() - 1;
+        boolean isPalindrome = true;
+
+        while (start < end) {
+
+            if (normalized.charAt(start) != normalized.charAt(end)) {
+                isPalindrome = false;
+                break;
+            }
+
+            start++;
+            end--;
+        }
+        System.out.println("UC10: Case-Insensitive & Space-Ignored Palindrome");
+        System.out.println("Original Input : " + input);
+        System.out.println("Normalized Input : " + normalized);
+        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println();
     }
 }
