@@ -16,6 +16,7 @@ public class palindromechecker {
         uc3_StringReverse();
         uc4_CharArrayMethod();
         uc5_StackMethod();
+        uc6_QueueStackMethod();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -77,6 +78,28 @@ public class palindromechecker {
         }
 
         System.out.println("UC5 Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome + "\n");
+    }
+    public static void uc6_QueueStackMethod() {
+        String input = "civic";
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : input.toCharArray()) {
+            queue.add(c);
+            stack.push(c);
+        }
+
+        boolean isPalindrome = true;
+
+        while (!queue.isEmpty()) {
+            if (!queue.remove().equals(stack.pop())) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("UC6 Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome + "\n");
     }
 }
