@@ -26,6 +26,7 @@ public class palindromechecker {
         uc10_CaseInsensitiveSpaceIgnored();
         uc11_ObjectOrientedService();
         uc12_StrategyPattern();
+        uc13_PerformanceComparison();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -356,5 +357,86 @@ public class palindromechecker {
         public boolean executeStrategy(String input) {
             return strategy.check(input);
         }
+    }
+    // UC13
+    public static void uc13_PerformanceComparison() {
+
+        String input = "madamimadam";
+
+        System.out.println("UC13: Performance Comparison");
+        System.out.println("Input : " + input);
+        System.out.println();
+
+        // Two Pointer Method
+        long startTime = System.nanoTime();
+        boolean result1 = twoPointerCheck(input);
+        long endTime = System.nanoTime();
+        long time1 = endTime - startTime;
+
+        // Stack Method
+        startTime = System.nanoTime();
+        boolean result2 = stackCheck(input);
+        endTime = System.nanoTime();
+        long time2 = endTime - startTime;
+
+        // Deque Method
+        startTime = System.nanoTime();
+        boolean result3 = dequeCheck(input);
+        endTime = System.nanoTime();
+        long time3 = endTime - startTime;
+
+        // Recursive Method
+        startTime = System.nanoTime();
+        boolean result4 = isPalindromeRecursive(input, 0, input.length() - 1);
+        endTime = System.nanoTime();
+        long time4 = endTime - startTime;
+
+        System.out.println("Two Pointer Method Time : " + time1 + " ns");
+        System.out.println("Stack Method Time       : " + time2 + " ns");
+        System.out.println("Deque Method Time       : " + time3 + " ns");
+        System.out.println("Recursive Method Time   : " + time4 + " ns");
+        System.out.println();
+    }
+    public static boolean twoPointerCheck(String input) {
+
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+            if (input.charAt(start) != input.charAt(end))
+                return false;
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+    public static boolean stackCheck(String input) {
+
+        java.util.Stack<Character> stack = new java.util.Stack<>();
+
+        for (char c : input.toCharArray())
+            stack.push(c);
+
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop())
+                return false;
+        }
+
+        return true;
+    }
+    public static boolean dequeCheck(String input) {
+
+        java.util.Deque<Character> deque = new java.util.ArrayDeque<>();
+
+        for (char c : input.toCharArray())
+            deque.add(c);
+
+        while (deque.size() > 1) {
+            if (!deque.removeFirst().equals(deque.removeLast()))
+                return false;
+        }
+
+        return true;
     }
 }
