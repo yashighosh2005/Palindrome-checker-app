@@ -15,6 +15,7 @@ public class palindromechecker {
         uc2_HardcodedPalindrome();
         uc3_StringReverse();
         uc4_CharArrayMethod();
+        uc5_StackMethod();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -57,6 +58,25 @@ public class palindromechecker {
         }
 
         System.out.println("UC4 Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome + "\n");
+    }
+    public static void uc5_StackMethod() {
+        String input = "noon";
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : input.toCharArray())
+            stack.push(c);
+
+        boolean isPalindrome = true;
+
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("UC5 Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome + "\n");
     }
 }
