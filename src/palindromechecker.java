@@ -13,6 +13,7 @@ public class palindromechecker {
         System.out.println("   System initialized successfully.");
 
         uc2_HardcodedPalindrome();
+        uc3_StringReverse();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -28,5 +29,16 @@ public class palindromechecker {
 
         System.out.println("UC2 Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome + "\n");
+    }
+    public static void uc3_StringReverse() {
+        String input = "level";
+        String reversed = "";
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i);
+        }
+
+        System.out.println("UC3 Input : " + input);
+        System.out.println("Is Palindrome? : " + input.equals(reversed) + "\n");
     }
 }
