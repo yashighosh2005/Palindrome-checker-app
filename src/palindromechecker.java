@@ -17,6 +17,7 @@ public class palindromechecker {
         uc4_CharArrayMethod();
         uc5_StackMethod();
         uc6_QueueStackMethod();
+        uc7_DequeMethod();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -100,6 +101,25 @@ public class palindromechecker {
         }
 
         System.out.println("UC6 Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome + "\n");
+    }
+    public static void uc7_DequeMethod() {
+        String input = "refer";
+        Deque<Character> deque = new ArrayDeque<>();
+
+        for (char c : input.toCharArray())
+            deque.add(c);
+
+        boolean isPalindrome = true;
+
+        while (deque.size() > 1) {
+            if (!deque.removeFirst().equals(deque.removeLast())) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("UC7 Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome + "\n");
     }
 }
