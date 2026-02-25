@@ -21,6 +21,7 @@ public class palindromechecker {
         uc8_LinkedListMethod();
         uc9_RecursiveMethod();
         uc10_CaseInsensitiveSpaceIgnored();
+        uc11_ObjectOrientedService();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -237,5 +238,47 @@ public class palindromechecker {
         System.out.println("Normalized Input : " + normalized);
         System.out.println("Is Palindrome? : " + isPalindrome);
         System.out.println();
+    }
+    // UC11
+    public static void uc11_ObjectOrientedService() {
+
+        String input = "Level";
+
+        PalindromeService service = new PalindromeService();
+
+        boolean result = service.checkPalindrome(input);
+
+        System.out.println("UC11: Object-Oriented Palindrome Service");
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + result);
+        System.out.println();
+    }
+    // Separate Service Class (Encapsulation)
+    class PalindromeService {
+
+        // Public method exposed to outside
+        public boolean checkPalindrome(String input) {
+
+            if (input == null)
+                return false;
+
+            // Normalize input
+            String processed = input.toLowerCase();
+
+            int start = 0;
+            int end = processed.length() - 1;
+
+            while (start < end) {
+
+                if (processed.charAt(start) != processed.charAt(end)) {
+                    return false;
+                }
+
+                start++;
+                end--;
+            }
+
+            return true;
+        }
     }
 }
