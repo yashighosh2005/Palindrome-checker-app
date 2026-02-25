@@ -14,6 +14,7 @@ public class palindromechecker {
 
         uc2_HardcodedPalindrome();
         uc3_StringReverse();
+        uc4_CharArrayMethod();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -40,5 +41,22 @@ public class palindromechecker {
 
         System.out.println("UC3 Input : " + input);
         System.out.println("Is Palindrome? : " + input.equals(reversed) + "\n");
+    }
+    public static void uc4_CharArrayMethod() {
+        String input = "radar";
+        char[] arr = input.toCharArray();
+
+        int start = 0, end = arr.length - 1;
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (arr[start++] != arr[end--]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("UC4 Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome + "\n");
     }
 }
