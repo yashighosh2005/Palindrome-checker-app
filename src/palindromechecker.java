@@ -19,6 +19,7 @@ public class palindromechecker {
         uc6_QueueStackMethod();
         uc7_DequeMethod();
         uc8_LinkedListMethod();
+        uc9_RecursiveMethod();
     }
 
     public static void uc2_HardcodedPalindrome() {
@@ -182,5 +183,31 @@ public class palindromechecker {
 
         System.out.println("UC8 Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome + "\n");
+    }
+    public static void uc9_RecursiveMethod() {
+
+        String input = "racecar";
+
+        boolean isPalindrome = isPalindromeRecursive(input, 0, input.length() - 1);
+
+        System.out.println("UC9 Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome + "\n");
+    }
+
+    // Recursive Helper Method
+    public static boolean isPalindromeRecursive(String str, int start, int end) {
+
+        // Base condition
+        if (start >= end) {
+            return true;
+        }
+
+        // If mismatch found
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+
+        // Recursive call
+        return isPalindromeRecursive(str, start + 1, end - 1);
     }
 }
